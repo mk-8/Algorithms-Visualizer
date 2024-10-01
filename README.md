@@ -6,7 +6,7 @@ Here's a revamped version of your README file:
 
 ## 🚀 Demo
 
-Check out the live demo [here]() to explore the algorithms in action.
+Check out the live demo [here](https://mk-8.github.io/Algorithms-Visualizer/) to explore the algorithms in action.
 
 ## 🌐 Technologies Used
 
