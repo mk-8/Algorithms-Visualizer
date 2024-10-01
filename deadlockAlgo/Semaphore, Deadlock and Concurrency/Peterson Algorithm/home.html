@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
+      rel="stylesheet"
+    />
+
+    <title>Peterson's Algorithm</title>
+<!--
+Reflux Template
+https://templatemo.com/tm-531-reflux
+-->
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css" />
+    <link rel="stylesheet" href="assets/css/templatemo-style.css" />
+    <link rel="stylesheet" href="assets/css/owl.css" />
+    <link rel="stylesheet" href="assets/css/lightbox.css" />
+  </head>
+
+  <body>
+
+    <div class="header">
+    <div class="nav">
+        <div>
+          <div class="name"><a href="../../../index.html">HOME</a></div>
+          <div class="logo"></div>
+          <div class="button">
+            <a href="https://github.com/naim30/OS-virtual-lab">
+              <div>Github</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <h1 id="midd">Peterson's Algorithm</h1>
+  <p id="def">Peterson’s solution provides a good algorithmic description of solving the critical-section problem and illustrates some of the complexities involved in designing software that addresses the requirements of mutual exclusion, progress, and bounded waiting.
+    Peterson's algorithm is considered a standard low-level algorithm for two-thread mutual exclusion.
+  </p>
+    <button id="bt" type="button"><a href="Algorithm/Peterson.html">Execute</a></button>
+    <div id="page-wraper">
+          <div class="left-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-image">
+                  <img src="ss/1.PNG" alt="" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-text">
+                  <h4>P0 execution</h4>
+                  <p>1. Process P0 is initiated and has entered the Start state.<br/>
+                    2. Process P0 after certain time, enters Critical section.<br/>
+                    3. Since, Critical section is already occupied by Process P0, it is now time to trigger Process P1.<br/>
+                     
+                    
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-text">
+                  <h4>P1 Trigger</h4>
+                  <p>Process P1 is triggered. <br>
+                      Process P1 waits in the Start state because the Critical Section is already occupied by Process P0. <br>
+                      Process P0 exits the Critical Section, allowing Process P1 to enter the Critical state. <br>
+                      Process P1 enters the Critical Section while Process P0 executes and moves to the Exit state. <br>
+                      Process P1 exits the Critical Section and moves to the Exit state, while Process P0 completes its execution. <br>
+                      Process P1 has completed its execution. <br>
+                    
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-image">
+                  <img src="ss/2.PNG" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-text">
+                  <h4>Analysis of Peterson's Algorithm</h4>
+                  <p>
+                    1.Mutual Exclusion<br/>
+                    The method described ensures mutual exclusion by using a condition in the entry section that involves two variables. This setup prevents a process from entering the critical section unless the other process is not interested and it was the last to update the turn variable. This approach effectively coordinates access to the critical section, ensuring that only one process can enter at a time, thus maintaining mutual exclusion. <br/>
+                    <br>2.Progress<br/>
+                    An uninterested process will never prevent another interested process from entering the critical section. If both processes are interested, the process will wait.<br/>
+                    <br/>
+                    3.Bounded waiting<br/>
+                    The interested variable mechanism failed because it did not provide bounded waiting. However, in Peterson's solution, a deadlock can never occur because the process that first sets the turn variable will definitely enter the critical section. Therefore, if a process is preempted after executing line 4 of the entry section, it will certainly enter the critical section on its next opportunity.<br/>
+                    <br/>
+                    4.Portability<br/>
+                    This is a comprehensive software solution, making it portable across all hardware platforms.                   
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-image">
+                  <img src="ss/1.jpeg" alt="abc" width="150" height="500">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+        </div>
+      </section>
+    </div>
+    
+  </body>
+</html>

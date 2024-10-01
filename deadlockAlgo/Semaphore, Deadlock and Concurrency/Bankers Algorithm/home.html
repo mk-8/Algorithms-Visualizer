@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chonburi&display=swap" rel="stylesheet">
+
+    <title>Banker's Algorithm</title>
+<!--
+Reflux Template
+https://templatemo.com/tm-531-reflux
+-->
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css" />
+    <link rel="stylesheet" href="assets/css/templatemo-style.css" />
+    <link rel="stylesheet" href="assets/css/owl.css" />
+    <link rel="stylesheet" href="assets/css/lightbox.css" />
+  </head>
+
+  <body>
+    <div class="header">
+    <div class="nav">
+        <div>
+          <div class="name"><a href="../../../index.html">HOME</a></div>
+          <div class="logo"></div>
+          <div class="button">
+            <a href="https://github.com/naim30/OS-virtual-lab">
+              <div>Github</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  <h1 id="midd">Banker's Algorithm</h1>
+  <p id="def">The banker’s algorithm is a resource allocation and deadlock avoidance algorithm that tests for safety by simulating the allocation for predetermined maximum possible amounts of all resources, then makes an “s-state” check to test for possible activities, before deciding whether allocation should be allowed to continue. Banker’s algorithm is named so because it is used in banking system to check whether loan can be sanctioned to a person or not. Suppose there are n number of account holders in a bank and the total sum of their money is S. If a person applies for a loan then the bank first subtracts the loan amount from the total money that bank has and if the remaining amount is greater than S then only the loan is sanctioned. It is done because if all the account holders comes to withdraw their money then the bank can easily do it. In other words, the bank would never allocate its money in such a way that it can no longer satisfy the needs of all its customers. The bank would try to be in safe state always.
+  </p>
+    <button id="bt" type="button"><a href="Algorithm/BankersDyn.html">Execute</a></button>
+    <div id="page-wraper">
+          <div class="left-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-image">
+                  <img src="ss/1.PNG" alt="" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-text">
+                  <h4>Basic</h4>
+                  <p> 
+                  Welcome to the Banker's algorithm. Here, you will find different sections and a fully configured table designed to help you solve almost any Banker's algorithm questions.                    
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-text">
+                  <h4>Tool Tips</h4>
+                  <p>
+                  If you want to learn more about what the Banker's algorithm is or have any other questions, we have tooltips available for you. Simply hover over the labels and headings to get the assistance you need.                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-image">
+                  <img src="ss/2.PNG" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="left-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-image">
+                  <img src="ss/3.PNG" alt="" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-text">
+                  <h4>Input</h4>
+                  <p>
+                  You can input the values for processes A, B, and C in the Allocation section, specifying the number of resources available for each type and the maximum resources a process is allowed to have. Additionally, you can enter the currently available resources in the Available section. This setup allows you to simulate real examples using the Banker's algorithm.                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-text">
+                  <h4>Button panel</h4>
+                  <p>
+                    Here, we have an "Add" button to add a process, a "Subtract" button to remove a process, and a "Submit" button to get the simulation results.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-image">
+                  <img src="ss/4.PNG" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="left-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-image">
+                  <img src="ss/5.PNG" alt="" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-text">
+                  <h4>Subtraction</h4>
+                  <p>
+                  You can press the "Minus" button if you've added extra processes and need to remove them.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-text">
+                  <h4> Answers</h4>
+                  <p>
+                  Answers are displayed below, showing the order in which the processes are executed.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-image">
+                  <img src="ss/6.PNG" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="right-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-text">
+                  <h4>Analysis of Banker's Algorithm approach</h4>
+                  <p>
+                    The Banker's algorithm is a resource allocation and deadlock avoidance algorithm commonly used in operating systems and banking systems. Here are its main characteristics and disadvantages:
+
+                    <br><br>Characteristics of the Banker's Algorithm
+                    <br>
+                    <br>1. Resource Satisfaction: The algorithm maintains enough resources to satisfy the requirements of at least one client at any time.
+                    <br>2. Resource Return: Once a process acquires all its resources, it must return them within a restricted period.
+                    <br>3. Waiting for Requests: When a process requests resources, it may need to wait if the resources are not immediately available.
+                    <br>4. Limited Resources: The system has a finite number of resources that can be allocated to processes.
+                    <br>5. Advanced Allocation Features: It includes advanced features for maximum resource allocation, ensuring that processes can declare their maximum needs in advance.
+                    
+                    <br><br>Disadvantages of the Banker's Algorithm
+                    <br>
+                    <br>1. Fixed Maximum Needs: Processes must declare their maximum resource needs in advance and cannot change these needs during execution.
+                    <br>2. Time Constraints: While the algorithm allows requests to be granted within a restricted time frame, it does not specify how long this period should be, which can be impractical in real-time scenarios.
+                    <br>3. Advance Knowledge Requirement: All processes must know and state their maximum resource requirements before execution begins, which can be limiting in dynamic environments where resource needs may change.
+
+                    <br><br>Summary <br><br>
+                    The Banker's algorithm is primarily used to avoid deadlocks by ensuring that resource allocation does not lead to unsafe states. It is particularly useful in banking systems to determine whether loans can be granted without risking insolvency. The algorithm uses several key notations, including Available, Max, Allocation, and Need, to manage resources effectively[1][2]. Despite its advantages in preventing deadlocks, its requirement for fixed maximum needs and advance knowledge of resource requirements are significant drawbacks.
+
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-image"><br/><br/><br/><br/>
+                  <img src="ss/1.jpg" alt="abc" width="150" height="350">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+        </div>
+      </section>
+    </div>
+    
+  </body>
+</html>

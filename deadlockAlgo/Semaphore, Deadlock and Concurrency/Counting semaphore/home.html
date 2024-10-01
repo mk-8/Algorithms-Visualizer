@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
+      rel="stylesheet"
+    />
+
+    <title>Counting Semaphore</title>
+<!--
+Reflux Template
+https://templatemo.com/tm-531-reflux
+-->
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css" />
+    <link rel="stylesheet" href="assets/css/templatemo-style.css" />
+    <link rel="stylesheet" href="assets/css/owl.css" />
+    <link rel="stylesheet" href="assets/css/lightbox.css" />
+  </head>
+
+  <body>
+
+    <div class="header">
+    <div class="nav">
+        <div>
+          <div class="name"><a href="../../../index.html">HOME</a></div>
+          <div class="logo"></div>
+          <div class="button">
+            <a href="https://github.com/naim30/OS-virtual-lab">
+              <div>Github</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <h1 id="midd">Counting Semaphore</h1>
+  <p id="def">There are scenarios in which more than one process needs to execute in the critical section simultaneously. However, a counting semaphore can be used when we need to have more than one process in the critical section at the same time. The programming code for semaphore implementation is shown below, which includes the structure of the semaphore and the logic for entry and exit in the critical section.</p>
+    <button id="bt" type="button"><a href="Algorithm/index.html">Execute</a></button>
+    <div id="page-wraper">
+          <div class="left-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-image">
+                  <img src="ss/1.PNG" alt="" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-text">
+                  <h4>Warning</h4>
+                  <p>If you input a semaphore value less than or equal to 0, it will result in a deadlock and will show a warning.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-text">
+                  <h4>Example to input the value</h4>
+                  <p>
+                    Here it is shown how the value of semaphore will be submitted.  
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-image">
+                  <img src="ss/2.PNG" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="left-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-image">
+                  <img src="ss/3.PNG" alt="" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-text">
+                  <h4>Message of Acceptance</h4>
+                  <p>
+If you submit a semaphore value greater than zero, it will be accepted, and the visualization will start.                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-text">
+                  <h4>Buttons overview</h4>
+                  <p>
+                    Home       : In the navbar, the Home button jumps to the main page. <br>
+                    Dropdown   : Allows you to jump to any algorithm. <br>
+                    Info panel : Displays the value of each required queue and semaphore. <br/>
+                    Add Process: Clicking this button adds a new process. <br/>
+                    P0         : Clicking this button moves the P0 process forward according to the algorithm. <br/>
+                    save PDF   : Saves all the statuses of each stage of the algorithm. <br> 
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-image">
+                  <img src="ss/4.PNG" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="left-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-image">
+                  <img src="ss/5.PNG" alt="" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-text">
+                  <h4>Tool tips</h4>
+                  <p>
+                    Tooltips provide information about the hovered element. Elements with tooltips include: <br>
+                    semaphore, suspended queue, critical section, completed queue, Added, Entry, CS, Exit
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-text">
+                  <h4>To CS</h4>
+                  <p>
+By clicking the button, the process will move to the Critical Section if it is not occupied or if the semaphore is greater than zero (0).                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-image">
+                  <img src="ss/6.PNG" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="left-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-image">
+                  <img src="ss/7.PNG" alt="" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-text">
+                  <h4>Add Processes</h4>
+                  <p>                  
+By clicking "Add Processes," new processes will be added along with a button and process icon.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-text">
+                  <h4>To Entry Section</h4>
+                  <p>
+                      Processes will move to the suspended queue if the critical section is occupied.
+ <br>
+Example: P2 will move to the critical section and P3 to the suspended queue as the semaphore value becomes less than zero. <br>                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-image">
+                  <img src="ss/8.PNG" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="left-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-image">
+                  <img src="ss/9.PNG" alt="" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-text">
+                  <h4>Warning</h4>
+                  <p>
+                    If a process is in the critical section and another process tries to interrupt, a warning will be displayed.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-text">
+                  <h4>Completetion pop-up</h4>
+                  <p>
+                    A pop-up will appear if any process is completed.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-image">
+                  <img src="ss/10.PNG" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="left-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-image">
+                  <img src="ss/11.PNG" alt="" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-text">
+                  <h4>Info Panel</h4>
+                  <p>
+                    Here, live value changes (in queues or variables) will be shown, which can be learned with each command given by the user to a button.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-text">
+                  <h4>Full completion</h4>
+                  <p>
+                    It's a gratitude message displayed to indicate that all processes are completed.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-image">
+                  <img src="ss/12.PNG" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="left-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-image">
+                  <img src="ss/13.PNG" alt="" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-text">
+                  <h4>Save PDF</h4>
+                  <p>
+By clicking "Save PDF," a PDF will be generated by collecting all text from the text area.                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-text">
+                  <h4>Analysis of Counting Semaphore approach</h4>
+                  <p>
+                   1. &nbsp;In this mechanism, entry and exit in the critical section are based on the counting semaphore value. The counting semaphore value at any time indicates the maximum number of processes that can enter the critical section simultaneously.<br/>
+                   2. &nbsp;A process that wants to enter the critical section first decreases the semaphore value by 1 and then checks whether it becomes negative. If it becomes negative, then the process is added to the list of blocked processes (i.e., q); otherwise, it enters the critical section.<br/>
+
+                   3. &nbsp;When a process exits from the critical section, it increases the counting semaphore by 1 and then checks whether it is negative or zero. If it is negative, this means at least one process is waiting in a blocked state; hence, to ensure bounded waiting, the first process among blocked processes will wake up and enter the critical section.<br/>
+
+                   4. &nbsp;The processes in the blocked list will wake up in order of their sleep. If the counting semaphore value is negative, it indicates how many processes are blocked; if positive, it shows how many slots are available in the critical section.<br/>
+                   5. &nbsp;To implement mutual exclusion, initialize the counting semaphore with 1.<br/>
+                   6. &nbsp;This ensures that only one process can be present in the critical section at any given time.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-image">
+                  <img src="ss/Counting-Semaphore-in-OS-Operating-System.png" alt="abc" width="150" height="500">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+        </div>
+      </section>
+    </div>
+    
+  </body>
+</html>

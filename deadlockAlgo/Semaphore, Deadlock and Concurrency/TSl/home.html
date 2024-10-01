@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
+      rel="stylesheet"
+    />
+
+    <title>Test and Set Lock</title>
+<!--
+Reflux Template
+https://templatemo.com/tm-531-reflux
+-->
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css" />
+    <link rel="stylesheet" href="assets/css/templatemo-style.css" />
+    <link rel="stylesheet" href="assets/css/owl.css" />
+    <link rel="stylesheet" href="assets/css/lightbox.css" />
+  </head>
+
+  <body>
+<div class="header">
+    <div class="nav">
+        <div>
+          <div class="name"><a href="../../../index.html">HOME</a></div>
+          <div class="logo"></div>
+          <div class="button">
+            <a href="https://github.com/naim30/OS-virtual-lab">
+              <div>Github</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <h1 id="midd">Test and Set Lock</h1>
+  <p id="def">TestAndSet is a hardware solution to the synchronization problem. In TestAndSet, we have a shared lock variable which can take either of the two values, 0 or 1.<br/>
+    Before entering into the critical section, a process inquires about the lock. If it is locked, it keeps on waiting until it becomes free and if it is not locked, it takes the lock and executes the critical section.  
+  </p>
+    <button id="bt" type="button"><a href="Algorithm/index.html">Execute</a></button>
+    <div id="page-wraper">
+          <div class="left-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-image">
+                  <img src="ss/1.PNG" alt="" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-text">
+                  <h4>Buttons overview</h4>
+                  <p>
+                    As shown in the screenshot, there are two buttons, P0 and P1, representing processes P0 and P1. Pressing P0 will move process P0, and pressing P1 will move process P1.
+                    
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-text">
+                  <h4>Step 1</h4>
+                  <p>
+                    If you press P0, process P0 will move from the queue to the entry section. Initially, in the entry section, the lock value is 0. Upon entering the critical section, a register comes into play, and its value becomes 1. In the entry section, the values between the register and the lock are exchanged, resulting in the lock value becoming 1 and the register value becoming 0.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-image">
+                  <img src="ss/2.PNG" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="left-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-image">
+                  <img src="ss/3.PNG" alt="" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-text">
+                  <h4>Step 2</h4>
+                  <p>
+If you press P0 again, process P0 will move from the entry section to the critical section. In the critical section, only one process can execute at a time.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-text">
+                  <h4>Step 3</h4>
+                  <p>
+                    If you press P1, it will move from the queue to the entry section. Pressing P1 again while process P0 is already in the critical section will cause an issue because only one process can enter the critical section at a time. Since process P0 is already inside, process P1 must wait for P0 to finish. With P0 in the critical section, the register value becomes 1, causing process P1 to enter a waiting loop and preventing it from entering the critical section. The website will display an alert message indicating that process P1 needs to wait for process P0 to leave the critical section.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-image">
+                  <img src="ss/4.PNG" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="left-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-image">
+                  <img src="ss/5.PNG" alt="" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-text">
+                  <h4>Step 4</h4>
+                  <p>
+                    When you press P0 again, process P0 will move from the critical section to the exit section. In the exit section, both the lock and register values will become 0. If you press P1 at this time, the lock value will change to 1.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-text">
+                  <h4>Step 5</h4>
+                  <p>
+                    If process P1 is in the critical section and process P0 is in the entry section, pressing P0 will not allow it to enter the critical section. The register value will change from 0 to 1, causing process P0 to enter an infinite while loop, preventing it from entering the critical section. An alert message will indicate that process P0 must wait for process P1 to leave the critical section.
+
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-image">
+                  <img src="ss/6.PNG" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="left-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-image">
+                  <img src="ss/7.PNG" alt="" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-text">
+                  <h4>Step 6</h4>
+                  <p>
+                    Consider a scenario where processes P0 and P1 are initially in the queue. When process P0 enters the entry section, the lock value becomes 1, and the register value is 0. If process P1 also enters the entry section at the same time, the register value changes to 1. As a result, neither process P0 nor process P1 can enter the critical section, leading to a deadlock.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-text">
+                  <h4>Step 7</h4>
+                  <p>
+When any process moves from the critical section to the exit section, the values of both the lock and register will reset to 0. This allows other processes to execute and utilize the critical section.                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-image">
+                  <img src="ss/8.PNG" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="right-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-text">
+                  <h4>Analysis of Test And Set Lock</h4>
+                  <p>
+                    Mutual Exclusion<br/>
+Mutual exclusion is guaranteed in the TSL (Test and Set Lock) mechanism because a process cannot be preempted just before setting the lock variable. Only one process can observe the lock variable as 0 at any given time, ensuring mutual exclusion. <br/><br/>
+                    Progress<br/>
+                    According to the definition of progress, a process that does not wish to enter the critical section should not prevent other processes from entering it. In the TSL (Test and Set Lock) mechanism, a process executes the TSL instruction only when it wants to enter the critical section. The lock value remains 0 if no process wants to enter the critical section, thus ensuring that progress is always guaranteed in TSL.<br/><br/>
+
+                    Bounded Waiting<br/>
+                    Bounded waiting is not guaranteed in TSL. Some processes might not get a chance for a long time, and we cannot predict when a process will definitely get a chance to enter the critical section.<br/><br/>
+
+                    Architectural Neutrality<br/>
+                    TSL does not provide architectural neutrality as it depends on the hardware platform. The TSL instruction is provided by the operating system, and some platforms might not support it. Therefore, it is not architecturally neutral.
+                   
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-image">
+                  <br/>
+                  <img src="ss/1.jpeg"" alt="abc" width="150" height="500">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+        </div>
+      </section>
+    </div>
+    
+  </body>
+</html>

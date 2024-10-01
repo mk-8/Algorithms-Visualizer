@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
+      rel="stylesheet"
+    />
+
+    <title>Binary Semaphore</title>
+<!--
+Reflux Template
+https://templatemo.com/tm-531-reflux
+-->
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css" />
+    <link rel="stylesheet" href="assets/css/templatemo-style.css" />
+    <link rel="stylesheet" href="assets/css/owl.css" />
+    <link rel="stylesheet" href="assets/css/lightbox.css" />
+  </head>
+
+  <body>
+    <div class="header">
+    <div class="nav">
+        <div>
+          <div class="name"><a href="../../../index.html">HOME</a></div>
+          <div class="logo"></div>
+          <div class="button">
+            <a href="https://github.com/naim30/OS-virtual-lab">
+              <div>Github</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  <h1 id="midd">Binary Semaphore</h1>
+  <p id="def">To get rid of the problem of wasting the wake-up signals, Dijkstra proposed an approach which involves storing all the wake-up calls. Dijkstra states that, instead of giving the wake-up calls directly to the consumer, producer can store the wake-up call in a variable. Any of the consumers can read it whenever it needs to do so.
+
+    Semaphore is the variables which storesthe entire wake up calls that are being transferred from producer to consumer. It is a variable on which read, modify and update happens automatically in kernel mode.
+    
+    Semaphore cannot be implemented in the user mode because race condition may always arise when two or more processes try to access the variable simultaneously. It always needs support from the operating system to be implemented.<br/><br/>
+    In counting semaphore, Mutual exclusion was not provided because we has the set of processes which required to execute in the critical section simultaneously.
+
+    However, Binary Semaphore strictly provides mutual exclusion. Here, instead of having more than 1 slots available in the critical section, we can only have at most 1 process in the critical section. The semaphore can have only two values, 0 or 1.
+    
+    Let's see the programming implementation of Binary Semaphore.</p>
+    <button id="bt" type="button"><a href="Algorithm/index.html">Execute</a></button>
+    <div id="page-wraper">
+          <div class="left-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-image">
+                  <img src="ss/1.PNG" alt="" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-text">
+                  <h4>Buttons overview</h4>
+                  <p>
+                    Home: In the navbar, the Home button jumps to the main page. <br>
+                    Dropdown: Allows you to jump to any algorithm. <br>
+                    Info Panel: Displays the value of each required queue and semaphore.  <br>
+                    Add Process: Clicking this button adds a new process. <br>
+                    P0: Clicking this button moves the P0 process forward according to the algorithm. <br>
+                    Save PDF: Saves all the statuses of each stage of the algorithm. <br>
+                    
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-text">
+                  <h4>Tool Tips</h4>
+                  <p>
+                    Tooltips provide information about the element being hovered over. <br>
+                    The elements with tooltips include: semaphore, suspended queue, critical section, completed queue, Added, Entry, CS, and Exit.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-image">
+                  <img src="ss/2.PNG" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="left-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-image">
+                  <img src="ss/3.PNG" alt="" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-text">
+                  <h4>To CS</h4>
+                  <p>
+                    By clicking the button, the process will move to the Critical Section if it is not occupied or if the semaphore value is greater than zero (0)                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-text">
+                  <h4>Add Processes</h4>
+                  <p>
+                    By clicking "Add Processes," new processes will be added along with a button and process icon.                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-image">
+                  <img src="ss/4.PNG" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="left-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-image">
+                  <img src="ss/5.PNG" alt="" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-text">
+                  <h4>To Entry Section</h4>
+                  <p>
+                    When the critical section is occupied, processes will move to the suspended queue. For example, if process P0 is currently in the critical section, process P2 will be moved to the suspended queue until the critical section becomes available
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-text">
+                  <h4>Warning</h4>
+                  <p>
+                    If a process is already in the critical section and another process attempts to interrupt, a warning will be displayed. This behavior is consistent with the principles of mutual exclusion, which ensure that only one process can execute in the critical section at a time. If a new interrupt arrives while a process is in the critical section, it becomes pending and will be handled once the critical section is exited                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-image">
+                  <img src="ss/6.PNG" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="left-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-image">
+                  <img src="ss/7.PNG" alt="" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-text">
+                  <h4>Full completion</h4>
+                  <p>
+                    It's a gratitude message displayed to indicate that all the processes have been completed.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-text">
+                  <h4>Save PDF</h4>
+                  <p>
+                    By clicking "Save PDF," a PDF will be generated by collecting all the text from the text area.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-image">
+                  <img src="ss/8.PNG" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="right-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-text">
+                  <h4>Analysis of Binary semaphore approach</h4>
+                  <p>
+                    1. A binary semaphore has two components: <br>
+
+                    &nbsp;&nbsp; a.  An integer value, which can be either 0 or 1. <br>
+
+                    &nbsp;&nbsp; b.  An associated waiting list (usually a queue). <br>
+
+                    2. The waiting list of a binary semaphore contains the processes that are blocked when trying to enter the critical section. <br>
+
+                    3. In the waiting list, the blocked processes are put to sleep. <br>
+
+                    4. The waiting list is usually implemented using a queue data structure. <br>
+
+                    5. Using a queue as a waiting list ensures bounded waiting. <br>
+
+                    6. This is because the process that arrives first in the waiting queue gets the chance to enter the critical section first. <br>
+
+                    7. The wait operation is executed when a process tries to enter the critical section. <br>
+
+                    8. The signal operation is executed when a process exits the critical section. <br>
+
+                    9. Binary semaphores are mainly used for two purposes: <br>
+
+                    &nbsp;&nbsp; a. To ensure mutual exclusion.
+                     <br>
+                    &nbsp;&nbsp; b. To implement the order in which processes must execute.
+                   <br>
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-image">
+                  <img src="ss/Binary-Semaphore-in-OS-Operating-System.png" alt="abc" width="150" height="500">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+        </div>
+      </section>
+    </div>
+    
+  </body>
+</html>
