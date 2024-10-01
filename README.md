@@ -1,6 +1,4 @@
-Here's a revamped version of your README file:
 
----
 
 # Algorithms Visualization
 
